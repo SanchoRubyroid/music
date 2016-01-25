@@ -1,0 +1,25 @@
+#waveform-wrapper {
+  position: fixed;
+  bottom: 0px;
+  left:0px;
+  right:0px;
+  padding-top: 15px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+#current-track {
+  padding-left: 10px;
+}
+
+@media(max-width:750px) {
+  .hide_less_750 {
+    display:none;
+  }
+}
+
+@media(max-width:640px) {
+  #current-track {
+    display:none;
+  }
+}

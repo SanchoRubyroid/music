@@ -18,6 +18,8 @@ gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
 gem 'slim-rails'
+gem 'ruby-mp3info'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

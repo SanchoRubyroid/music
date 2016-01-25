@@ -1,0 +1,19 @@
+.container-fluid
+  .row
+    table.table.table-hover
+      caption Personal Tracks
+      thead
+        tr
+          th Name
+          th.hide_less_750 Time
+          th.hide_less_750 Bitrate
+          th.hide_less_750 Sample Rate
+      tbody
+        - @tracks_manager.each_track do |track|
+          tr.track-container[data-filename="#{track.filename}"]
+            = content_tag(:td, track.name)
+            = content_tag(:td, track.length, class:'hide_less_750')
+            = content_tag(:td, track.bitrate, class:'hide_less_750')
+            = content_tag(:td, track.samplerate, class:'hide_less_750')
+
+== render 'waveform'
