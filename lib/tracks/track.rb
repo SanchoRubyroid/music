@@ -2,7 +2,7 @@ require 'mp3info'
 
 module Tracks
   class Track
-    attr_reader :filename, :artist, :title, :bitrate, :samplerate, :length, :filename
+    attr_reader :filename, :artist, :title, :track, :bitrate, :samplerate, :length, :filename
 
     def initialize(filename)
       @filename = filename
@@ -11,6 +11,7 @@ module Tracks
       Mp3Info.open("#{TRACKS_PATH}/#{filename}") do |mp3|
         @artist = mp3.tag.artist
         @title = mp3.tag.title
+        @track = mp3.tag.tracknum.to_i
 
         @bitrate = "#{mp3.bitrate} kbps"
         @samplerate = mp3.samplerate

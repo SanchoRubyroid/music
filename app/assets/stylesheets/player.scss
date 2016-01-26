@@ -1,4 +1,4 @@
-#waveform-wrapper {
+#bottom-container {
   position: fixed;
   bottom: 0px;
   left:0px;
@@ -8,8 +8,33 @@
   border-top: 1px solid #eee;
 }
 
+#bottom-line {
+  background-color:#f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  padding:10px;
+}
+
+#bottom-line .progress {
+  display: none;
+  margin: 5px 0px;
+  height: 24px;
+}
+
+#waveform-wrapper{
+  margin: auto;
+  width:763px;
+}
+
 #current-track {
   padding-left: 10px;
+}
+
+tr.track-container {
+  cursor: pointer;
+}
+
+tr.track-container.current {
+  font-weight: bolder;
 }
 
 @media(max-width:750px) {

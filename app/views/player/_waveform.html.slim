@@ -1,16 +1,21 @@
-#waveform-wrapper
+#bottom-container
   .container-fluid
     .row
       .col-xs-12
-        #waveform
-        #wave-timeline
-      .col-xs-12[style="background-color:grey;padding:10px" ]
-        button#step-backward.btn.btn-default
-          span.glyphicon.glyphicon-step-backward
-        button#playpause.btn.btn-default
-          span.glyphicon.glyphicon-play
-        button#step-forward.btn.btn-default
-          span.glyphicon.glyphicon-step-forward
-        span#current-track Click a track to play.
-        button#download.btn.btn-default.pull-right
-          span.glyphicon.glyphicon-download
+        #waveform-wrapper
+          #waveform
+          #wave-timeline
+      #bottom-line.controls.col-xs-12
+        .controls
+          .btn-group
+            button#step-backward.btn.btn-default
+              span.glyphicon.glyphicon-step-backward
+            button#playpause.btn.btn-default
+              span.glyphicon.glyphicon-play
+            button#step-forward.btn.btn-default
+              span.glyphicon.glyphicon-step-forward
+          span#current-track Click a track to play.
+          button.download.btn.btn-default.pull-right[data-filename="current"]
+            span.glyphicon.glyphicon-download
+        .progress
+          .progress-bar.progress-bar-info.progress-bar-striped
