@@ -24,8 +24,14 @@ set :deploy_to, '/var/rails/music'
 # set :keep_releases, 5
 
 namespace :deploy do
-  task :create_symlink do
+  task :custom_symlink do
     on roles(:app) do
+      info "Creating secure symlinks"
+      %w{ database secrets }.each do |yaml_name|
+        execute "rm #{fetch(:release_path)}/config/#{yaml_name}.yml"
+        execute "ln -nfs #{fetch(:deploy_to)}/secure/#{yaml_name}.yml #{fetch(:release_path)}/config/#{yaml_name}.yml"
+      end
+
       info "Creating files symlink"
       execute "ln -nfs #{fetch(:deploy_to)}/shared/files #{fetch(:release_path)}/public/files"
     end
@@ -49,6 +55,6 @@ namespace :deploy do
   end
 
   after :finishing, 'deploy:cleanup'
-  after :finishing, 'deploy:create_symlink'
+  after 'symlink:shared', 'deploy:custom_symlink'
 
 end
