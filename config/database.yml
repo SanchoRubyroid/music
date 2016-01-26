@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: music_production
   pool: 5
-  username: root
-  password: 1
+  username: app
+  password: apppw
   host: localhost

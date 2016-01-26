@@ -1,5 +1,10 @@
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'music'
+set :repo_url, 'git@github.com:SanchoRubyroid/music.git'
+set :repository_cache, 'git_cache'
+set :deploy_via, :remote_cache
+
+set :passenger_restart_with_touch, true
+set :passenger_rvm_ruby_version, fetch(:rvm_ruby_version)
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
