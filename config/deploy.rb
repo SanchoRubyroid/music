@@ -24,6 +24,12 @@ set :deploy_to, '/var/rails/music'
 # set :keep_releases, 5
 
 namespace :deploy do
+  task :create_symlink do
+    on roles(:app) do
+      info "Creating files symlink"
+      execute "ln -nfs #{fetch(:deploy_to)}/shared/files #{fetch(:release_path)}/public/files"
+    end
+  end
 
   desc 'Restart application'
   task :restart do
@@ -43,5 +49,6 @@ namespace :deploy do
   end
 
   after :finishing, 'deploy:cleanup'
+  after :finishing, 'deploy:create_symlink'
 
 end
