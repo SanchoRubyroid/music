@@ -8,7 +8,7 @@ set :passenger_rvm_ruby_version, fetch(:rvm_ruby_version)
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-# set :deploy_to, '/var/www/my_app'
+set :deploy_to, '/var/rails/music'
 # set :scm, :git
 
 # set :format, :pretty
